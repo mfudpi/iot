@@ -499,6 +499,11 @@ namespace Iot.Device.Media
             ctrl.id = VideoDeviceValueType.VerticalFlip;
             ctrl.value = Settings.VerticalFlip ? 1 : 0;
             V4l2Struct(InteropVideodev2.V4l2Request.VIDIOC_S_CTRL, ref ctrl);
+
+            // Set iso mode
+            ctrl.id = VideoDeviceValueType.IsoSensitivityMode;
+            ctrl.value = (int)Settings.IsoSensitivityMode;
+            V4l2Struct(InteropVideodev2.V4l2Request.VIDIOC_S_CTRL, ref ctrl);
         }
 
         private void FillVideoConnectionSettings()
@@ -581,6 +586,11 @@ namespace Iot.Device.Media
             if (Settings.VerticalFlip.Equals(default))
             {
                 Settings.VerticalFlip = Convert.ToBoolean(GetVideoDeviceValue(VideoDeviceValueType.VerticalFlip).DefaultValue);
+            }
+
+            if (Settings.IsoSensitivityMode.Equals(default))
+            {
+                Settings.IsoSensitivityMode = (IsoSensitivityMode)GetVideoDeviceValue(VideoDeviceValueType.IsoSensitivityMode).DefaultValue;
             }
         }
 

@@ -87,5 +87,10 @@ namespace Iot.Device.Media
         /// Scene Mode
         /// </summary>
         SceneMode = 10094874,
+
+        /// <summary>
+        /// Iso Sensitivity Mode
+        /// </summary>
+        IsoSensitivityMode = 10094872,
     }
 }

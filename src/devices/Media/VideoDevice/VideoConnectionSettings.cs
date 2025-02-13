@@ -119,5 +119,10 @@ namespace Iot.Device.Media
         /// Whether vertical flip the captured image.
         /// </summary>
         public bool VerticalFlip { get; set; }
+
+        /// <summary>
+        /// Iso sensitivity mode of video device.
+        /// </summary>
+        public IsoSensitivityMode IsoSensitivityMode { get; set; }
     }
 }
